@@ -1,0 +1,6 @@
+<h1>New Userlist</h1>
+
+#<%= render 'form', userlist: @userlist %>
+<%=session[:user_id]%>
+<%=session[:nowgroup]%>
+<%= link_to 'Back', userlists_path %>

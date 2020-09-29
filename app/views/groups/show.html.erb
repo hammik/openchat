@@ -1,0 +1,44 @@
+
+
+
+<%= stylesheet_link_tag 'groups' %>
+<div class="wrapper">
+
+<div class ="container">
+<p>チャットがリアルタイムに送信されない場合は、リロードしてみてください</p>
+<h1><%=Group.find_by(id: session[:nowgroup]).name%>(<%=Group.find_by(id: session[:nowgroup]).users.count%>)</h1>
+<a href="#shita">最新のトークまで移動</a>
+<%= link_to "Back to home", home_path %>
+<div id="messages", data-group_id="<%= @params_group%>">
+<% @messages.each do |message| %>
+  
+  <% if message.group_id == @params_group%>
+    <div class="fukiArea">
+    <div class="person">
+  <p><%= User.find_by(id: message.user_id).name%></p>
+  </div>
+    <div class="fukidasi">
+    <p><%= message.content %></p>
+    </div>
+    </div>
+    </p>
+    <% end %>
+<% end %>
+</div>
+
+<p id="shita"></p>
+<div class="stick">
+<form>
+  <input type="text" name="message" data-behavior="group_speaker" placeholder="メッセージを入力" >
+  <input type="hidden" name="group_id" 　 value=<%= params[:group_id].to_i %>>
+  <input type="hidden" name="user_id"　 value=<%=@current_user.id%>>
+  <button class='chat_submit' type="button">送信</button>
+</form>
+</div>
+
+
+<%= action_cable_meta_tag %>
+
+</div>
+</div>
+

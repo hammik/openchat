@@ -1,0 +1,15 @@
+<%= stylesheet_link_tag 'groups' %>
+<div class="wrapper">
+<div class ="container">
+
+<p id="notice">グループへの登録が完了しました！</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= Group.find_by(id: params[:group_id]).name %>
+</p>
+
+<h3><%=link_to "メッセージを送ろう！！！", "http://jlyd.sw.it.aoyama.ac.jp/groups/show?group_id=#{params[:group_id]}?user_id=#{params[:user_id]}" %></h3>
+
+</div>
+</div>

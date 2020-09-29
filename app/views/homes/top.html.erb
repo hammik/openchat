@@ -1,0 +1,95 @@
+<%= stylesheet_link_tag 'home' %>
+
+<div class="wrapper">
+<div class ="container">
+<h1>home</h1>
+<% if @current_user != nil then%>
+    <p>logged in as <%=@current_user.email%></p>
+    <%=link_to "Logout",logout_path, method: 'delete'%>
+<%else%>
+<p>not login</p>
+<%=link_to "Login",login_path%>
+<%end%>
+
+
+
+<%= form_tag('http://jlyd.sw.it.aoyama.ac.jp/home', method: 'get') do %>
+    <%= label_tag(:search_key, 'グループを探す') %>
+    <%= text_field_tag(:search_key) %>
+    <%= submit_tag('Search') %> 
+<% end %>
+  
+<%if @candigroup==nil %>
+  
+  <p><%= "見つかりませんでした" %></p>
+  <%elsif @candigroup==0%>
+  <%else%>
+  <p>参加可能なグループ</p>
+   <% @candigroup.each do |group| %>
+    <%= form_tag('http://jlyd.sw.it.aoyama.ac.jp/participate', method: 'get') do %>
+      <%= hidden_field_tag :group_id, group.id %>
+      <%= hidden_field_tag :user_id, @current_user.id %>
+      <%= submit_tag(group.name) %> 
+      <%end%>
+  <% end %>
+   
+  
+ 
+ 
+  
+  <%end%>
+</table>
+<br>
+
+<%=link_to "グループを作成する",new_group_path%>
+<div id="navArea">
+
+  <nav>
+  
+    <div class="inner">
+    <ul>
+  
+    <%for group in @current_user.groups%>
+    
+   <li> <a href = <%="http://jlyd.sw.it.aoyama.ac.jp/groups/show?group_id=#{group.id}?user_id=#{@current_user.id}&commit=f"%>>
+   <%=group.name%>
+    </a></li>
+    <%end%>
+    </ul>
+    </div>
+  </nav>
+
+  <div class="toggle_btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div id="mask"></div>
+
+</div>
+
+
+</div>
+</div>
+
+<script>
+(function($) {
+    var $nav   = $('#navArea');
+    var $btn   = $('.toggle_btn');
+    var $mask  = $('#mask');
+    var open   = 'open';
+
+    $btn.on( 'click', function() {
+      if ( ! $nav.hasClass( open ) ) {
+        $nav.addClass( open );
+      } else {
+        $nav.removeClass( open );
+      }
+    });
+  
+    $mask.on('click', function() {
+      $nav.removeClass( open );
+    });
+  } )(jQuery)
+</script>

@@ -1,0 +1,22 @@
+<div class="message"> 
+
+  <%if session[:user_id]!=message.user_id%>
+    <div class="fukiArea2">
+    <p class ="person"><%= User.find_by(id: message.user_id).name%></p>
+    <div class="fukidasi2">
+      <p>
+      <%= message.content %>
+      </p>
+    <div>
+    </div>
+  <%else%>
+    <div class="fukiArea2">
+    <div class="fukidasi2">
+      <p>
+      <%= User.find_by(id: message.user_id).name%>:
+      <%= message.content %>
+      </p>
+    <div>
+    </div>
+  <%end%>
+</div>

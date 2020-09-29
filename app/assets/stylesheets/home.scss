@@ -1,0 +1,436 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.group_card{
+    height: 10%;
+    width: 25%;
+    border-radius: 3px;
+    transition: all .25s ease;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    text-align:center
+  }
+  .group_card:hover{
+    transform: scale(1.04);
+  
+   box-shadow: 0 7px 15px rgba(0, 0, 0, 0.2);
+  }
+  @font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Source Sans Pro ExtraLight'), local('SourceSansPro-ExtraLight'), url(https://fonts.gstatic.com/s/sourcesanspro/v13/6xKydSBYKcSV-LCoeQqfX1RYOo3i94_wlxdr.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v13/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdr.ttf) format('truetype');
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+    overflow-y:　scroll;
+  }
+  body {
+    overflow-y:　scroll;
+    font-family: "Segoe UI", Meiryo, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: white;
+    font-weight: 300;
+  }
+  body ::-webkit-input-placeholder {
+    /* WebKit browsers */
+    font-family: "Segoe UI", Meiryo, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+     color: white;
+    font-weight: 300;
+  }
+  body :-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    font-family: "Segoe UI", Meiryo, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: white;
+    opacity: 1;
+    font-weight: 300;
+  }
+  body ::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    font-family: "Segoe UI", Meiryo, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: white;
+    opacity: 1;
+    font-weight: 300;
+  }
+  body :-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    
+    font-family: "Segoe UI", Meiryo, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: white;
+    font-weight: 300;
+  }
+  .wrapper {
+    overflow-y:　scroll;
+    background: rgb(125,185,222);
+    background: -webkit-gradient(linear, left top, right bottom, fromrgb(125,185,222), torgb(11,52,110));
+    background: linear-gradient(to bottom right,  rgb(125,185,222) 0%, rgb(11,52,110) 100%);
+    position: absolute;
+   
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    overflow: hidden;
+  }
+  .wrapper.form-success .container h1 {
+    -webkit-transform: translateY(85px);
+            transform: translateY(85px);
+  }
+  .container {
+    overflow-y:　scroll;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 0;
+    height:100%;
+    text-align: center;
+  }
+  .container h1 {
+    font-size: 40px;
+    -webkit-transition-duration: 1s;
+            transition-duration: 1s;
+    -webkit-transition-timing-function: ease-in-put;
+            transition-timing-function: ease-in-put;
+    font-weight: bolder;
+  }
+  form {
+    padding: 20px 0;
+    position: relative;
+    z-index: 2;
+  }
+  form input {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    outline: 0;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 250px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    padding: 10px 15px;
+    margin: 0 auto 10px auto;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    -webkit-transition-duration: 0.25s;
+            transition-duration: 0.25s;
+    font-weight: 300;
+  }
+  form input:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  form input:focus {
+    background-color: white;
+    width: 300px;
+    color: rgb(125,185,222);
+  }
+  .button {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    outline: 0;
+    background-color: white;
+    border: 0;
+    padding: 10px 15px;
+    color: rgb(125,185,222);
+    border-radius: 3px;
+    width: 250px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-transition-duration: 0.25s;
+            transition-duration: 0.25s;
+  }
+  .h3{
+    padding: 10px 15px;
+    color:white;
+    border-radius: 3px;
+    width: 250px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  .button:hover {
+    background-color: #f5f7f9;
+  }
+  
+  
+  
+  ::selection {
+      background-color: salmon;
+      color: white;
+    }
+    
+    .parallax > use {
+      animation: move-forever 12s linear infinite;
+    }
+    .parallax > use:nth-child(1) {
+      animation-delay: -2s;
+    }
+    .parallax > use:nth-child(2) {
+      animation-delay: -2s;
+      animation-duration: 5s;
+    }
+    .parallax > use:nth-child(3) {
+      animation-delay: -4s;
+      animation-duration: 3s;
+    }
+    
+    @keyframes move-forever {
+      0% {
+        transform: translate(-90px, 0%);
+      }
+      100% {
+        transform: translate(85px, 0%);
+      }
+    }
+    .editorial {
+      display: block;
+      width: 100%;
+      height: 10em;
+      max-height: 100vh;
+      margin: 0;
+    }
+    
+    .content {
+      font-family: 'Lato',sans-serif;
+      text-align: center;
+      background-color: #2d55aa;
+      text-align: center;
+      min-height: 75vh;
+      margin: -.1em 0 0 0;
+      padding: 1em;
+      color: #eee;
+      font-size: 2em;
+      font-weight: 300;
+    }
+    
+    .content {
+      font-size: 1em;
+    }
+    
+    .content h1 {
+      margin-top: -1.3em;
+      font-weight: 100;
+      font-size: 5em;
+      user-select: none;
+      cursor: default;
+    }
+    
+    /*prevent many large-by-comparison ripples by shrinking the height*/
+    @media (max-width: 50em) {
+      .content h1 {
+        font-size: 12vmax;
+      }
+    
+      .editorial {
+        height: 17vw;
+      }
+    }
+    h1 {
+      outline: none;
+    }
+    
+    nav {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: -300px;
+      bottom: 0;
+      width: 300px;
+      background: #ffffff;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      transition: all .5s;
+      z-index: 3;
+      opacity: 0;
+    }
+    .open nav {
+      left: 0;
+      opacity: 1;
+    }
+    nav .inner {
+      padding: 25px;
+    }
+    nav .inner ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav .inner ul li {
+      position: relative;
+      margin: 0;
+      border-bottom: 1px solid #333;
+    }
+    nav .inner ul li a {
+      display: block;
+      color: #333;
+      font-size: 14px;
+      padding: 1em;
+      text-decoration: none;
+      transition-duration: 0.2s;
+    }
+    nav .inner ul li a:hover {
+      background: #e4e4e4;
+    }
+    @media screen and (max-width: 767px) {
+      nav {
+        left: -220px;
+        width: 220px;
+      }
+    }
+   
+
+
+
+    nav {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: -300px;
+      bottom: 0;
+      width: 300px;
+      background: #ffffff;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      transition: .5s;
+      z-index: 3;
+    }
+    .open nav {
+      left: 0;
+    }
+    nav .inner {
+      padding: 25px;
+    }
+    nav .inner ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav .inner ul li {
+      position: relative;
+      margin: 0;
+      border-bottom: 1px solid #333;
+    }
+    nav .inner ul li a {
+      display: block;
+      color: #333;
+      font-size: 14px;
+      padding: 1em;
+      text-decoration: none;
+      transition-duration: 0.2s;
+    }
+    nav .inner ul li a:hover {
+      background: #e4e4e4;
+    }
+    @media screen and (max-width: 767px) {
+      nav {
+        left: -240px;
+        width: 240px;
+      }
+    }
+    /*============
+    @keyframes
+    =============*/
+    
+    .toggle_btn {
+      display: block;
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      width: 60px;
+      height: 30px;
+      transform: translate(0, 0);
+      transition: all .5s;
+      cursor: pointer;
+      z-index: 3;
+    }
+    .open .toggle_btn {
+      left: 330px;
+    }
+    .toggle_btn span {
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background-color: #666;
+      transition: all .5s;
+    }
+    .toggle_btn span:nth-child(1) {
+      top: 5px;
+      width: 50px;
+      animation: equalizer01 7000ms infinite;
+    }
+    .toggle_btn span:nth-child(2) {
+      top: 15px;
+      width: 50px;
+      animation: equalizer02 5000ms infinite;
+      animation-delay: 0.33s;
+    }
+    .toggle_btn span:nth-child(3) {
+      top: 25px;
+      width: 50px;
+      animation: equalizer02 5000ms infinite;
+    }
+    .open .toggle_btn span {
+      background-color: #fff;
+      width: 30px;
+    }
+    .open .toggle_btn span:nth-child(1) {
+      transform: translate(0, 10px) rotate(-45deg);
+      animation: unset;
+    }
+    .open .toggle_btn span:nth-child(2) {
+      opacity: 0;
+      animation: unset;
+    }
+    .open .toggle_btn span:nth-child(3) {
+      transform: translate(0, -10px) rotate(45deg);
+      animation: unset;
+    }
+    @media screen and (max-width: 767px) {
+      .open .toggle_btn {
+        left: 260px;
+      }
+    }
+    /*============
+    #mask
+    =============*/
+    #mask {
+      display: none;
+    }
+    .open #mask {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      opacity: .8;
+      z-index: 2;
+      cursor: pointer;
+      transition: all .5s;
+    }
+    /*============
+    main
+    =============*/
+    main {
+      padding: 50px;
+    }
+    main h1 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      text-align: center;
+    }

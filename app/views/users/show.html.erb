@@ -1,0 +1,20 @@
+<%= stylesheet_link_tag 'groups' %>
+<%= stylesheet_link_tag 'scaffolds' %>
+<div class="wrapper">
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+<%=link_to "ログインして、トークに参加しましょう！！", login_path %>
+
+</div></div>

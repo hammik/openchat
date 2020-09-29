@@ -1,0 +1,58 @@
+<%= stylesheet_link_tag 'sessions' %>
+<div class="wrapper">
+
+    <div class="container">
+        <h1>Hamaebiチャットへようこそ</h1>
+        <p><%= flash.alert %></p>
+
+        <%= form_with(url: login_path, local: true) do |form| %>
+          <div class="form">
+           
+            <%= form.text_field :email,placeholder:"Email", id: :user_email %>
+          </div>
+
+          <div class="form">
+          
+            <%= form.password_field :password,placeholder:"Password", id: :user_password %>
+          </div>
+
+          <%= form.submit "ログイン",class:"button" %>
+        <%end%>
+        <h3>アカウントをお持ちではありませんか！<%= link_to "今すぐ作成してトークに参加しましょう！！", new_user_path %></h3>
+    </div>
+
+    <svg class="editorial"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 24 150 28"
+     preserveAspectRatio="none">
+ <defs>
+
+
+ <path id="gentle-wave"
+ d="M-160 44c30 0 
+    58-18 88-18s
+    58 18 88 18 
+    58-18 88-18 
+    58 18 88 18
+    v44h-352z" />
+  </defs>
+  <g class="parallax">
+   <use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2"/>
+   <use xlink:href="#gentle-wave" x="50" y="3" fill="#3461c1"/>
+   <use xlink:href="#gentle-wave" x="50" y="6" fill="#2d55aa"/>  
+  </g>
+</svg>
+<div class="content">
+  
+</div>
+
+<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+
+
+    
+</div>
+
+
+
+
