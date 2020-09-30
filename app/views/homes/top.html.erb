@@ -13,30 +13,30 @@
 
 
 
-<%= form_tag('http://jlyd.sw.it.aoyama.ac.jp/home', method: 'get') do %>
+<%= form_tag('https://open--chat.herokuapp.com/home', method: 'get') do %>
     <%= label_tag(:search_key, 'グループを探す') %>
     <%= text_field_tag(:search_key) %>
-    <%= submit_tag('Search') %> 
+    <%= submit_tag('Search') %>
 <% end %>
-  
+
 <%if @candigroup==nil %>
-  
+
   <p><%= "見つかりませんでした" %></p>
   <%elsif @candigroup==0%>
   <%else%>
   <p>参加可能なグループ</p>
    <% @candigroup.each do |group| %>
-    <%= form_tag('http://jlyd.sw.it.aoyama.ac.jp/participate', method: 'get') do %>
+    <%= form_tag('https://open--chat.herokuapp.com/participate', method: 'get') do %>
       <%= hidden_field_tag :group_id, group.id %>
       <%= hidden_field_tag :user_id, @current_user.id %>
-      <%= submit_tag(group.name) %> 
+      <%= submit_tag(group.name) %>
       <%end%>
   <% end %>
-   
-  
- 
- 
-  
+
+
+
+
+
   <%end%>
 </table>
 <br>
@@ -45,13 +45,13 @@
 <div id="navArea">
 
   <nav>
-  
+
     <div class="inner">
     <ul>
-  
+
     <%for group in @current_user.groups%>
-    
-   <li> <a href = <%="http://jlyd.sw.it.aoyama.ac.jp/groups/show?group_id=#{group.id}?user_id=#{@current_user.id}&commit=f"%>>
+
+   <li> <a href = <%="https://open--chat.herokuapp.com/groups/show?group_id=#{group.id}?user_id=#{@current_user.id}&commit=f"%>>
    <%=group.name%>
     </a></li>
     <%end%>
@@ -87,7 +87,7 @@
         $nav.removeClass( open );
       }
     });
-  
+
     $mask.on('click', function() {
       $nav.removeClass( open );
     });
